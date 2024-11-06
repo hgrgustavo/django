@@ -1,26 +1,21 @@
 from django.urls import path
-from project.views import IndexTemplateView, FuncionarioListView, FuncionarioUpdateView, FuncionarioDeleteView
 
-app_name = "webiste"
+from helloworld.models import Employee
+from .views import IndexTemplateView, EmployeeListView, EmployeeUpdateView, EmployeeDeleteView, EmployeeCreateView
 
-
-
-
-
-urlpatters = [
-    # index
+app_name = "website"
+urlpatterns = [
     path("", IndexTemplateView.as_view(), name="index"),
 
-    # lista
-    path("funcionarios/", FuncionarioListView.as_view(), name="lista_funcionarios()"),
+    path("employees/", EmployeeListView.as_view(), name="employee_list"),
 
-    # update com id
-    path("funcionario/<id>", FuncionarioUpdateView.as_view(), name="atualiza_funcionario"),
+    path("employees/<id>", EmployeeUpdateView.as_view(), name="employee_update"),
+    path("employees/<slug>", EmployeeUpdateView.as_view(), name="employee_update"),
 
-    # update com slug
-    path("funcionario/<slug>", FuncionarioUpdateView.as_view(), nam="atualiza_funcionario"),
+    path("employee/delete/<pk>", EmployeeDeleteView.as_view(), name="employee_delete"),
 
-    # delete
-    path("funcionario/excluir/<pk>", FuncionarioDeleteView.as_view(), name="deleta_funcionario")
+    path("employee/register/", EmployeeCreateView.as_view(), name="employee_register")
+
+
 
 ]
