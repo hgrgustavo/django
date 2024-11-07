@@ -1,6 +1,14 @@
 <form method="post">
     {% csrf_token %}
-    {{ form }}
-
+    <label for="{{ form.name.id_for_label }}">Nome</label>
+    {{ form.name }}
+    <label for="{{ form.last_name.id_for_label }}">Sobrenome</label>
+    {{ form.last_name }}
+    <label for="{{ form.cpf.id_for_label }}">CPF</label>
+    {{ form.cpf }}
+    <label for="{{ form.time.id_for_label }}">Tempo de Serviço</label>
+    {{ form.time }}
+    <label for="{{ form.salary.id_for_label }}">Remuneração</label>
+    {{ form.salary }}
     <button type="submit">Cadastrar</button>
 </form>
