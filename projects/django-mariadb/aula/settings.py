@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'aula.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'venv/lib/python3.12/site-packages/mariadb',
+        'NAME': BASE_DIR / 'database.sql',
     }
 }
 
