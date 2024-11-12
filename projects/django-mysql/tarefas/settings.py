@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'tarefas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': BASE_DIR / 'db_tarefas.sql',
-        'USER': 'Gus',
+        'NAME': 'db_tarefas',
+        'USER': 'gus',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
