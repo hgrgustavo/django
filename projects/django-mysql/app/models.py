@@ -6,9 +6,7 @@ class TblUsuario(models.Model):
 
     usu_nome = models.CharField(max_length=255, )
 
-    usu_email = models.EmailField(
-
-    )
+    usu_email = models.EmailField()
 
 
 class TblTarefas(models.Model):
@@ -22,6 +20,4 @@ class TblTarefas(models.Model):
 
     usu_codigo = models.ForeignKey(to=TblUsuario, on_delete=models.CASCADE)
 
-    tar_data = models.DateField(
-
-    )
+    tar_data = models.DateField()
