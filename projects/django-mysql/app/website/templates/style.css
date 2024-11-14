@@ -1,0 +1,56 @@
+.blue-container {
+    border-color: black;
+    border-width: 1;
+    border-radius: 0.5rem;
+
+    background: #0094f7;
+    display: flex;
+    gap: 34%;
+
+    padding-bottom: 2rem;
+
+}
+
+.blue-container .links {
+
+    display: flex;
+    gap: 30px;
+
+    padding-top: 1rem;
+    padding-right: 2rem;
+
+
+}
+
+.blue-container .links a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.blue-container .logo {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+hr {
+    background-color: black;
+    padding-bottom: 0.2rem;
+    border-radius: 0.5rem;
+    border: 1rem;
+}
+
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 1.7rem;
+
+}
+
+
+
