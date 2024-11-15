@@ -1,9 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19-11.5.2-MariaDB, for Linux (x86_64)
+-- MariaDB dump 10.19-11.5.2-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: db_tarefas
+-- Host: 127.0.0.1    Database: mariadb
 -- ------------------------------------------------------
--- Server version	11.5.2-MariaDB
+-- Server version	11.5.2-MariaDB-ubu2404
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -17,14 +17,6 @@
 /*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
 --
--- Current Database: `db_tarefas`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `db_tarefas` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
-
-USE `db_tarefas`;
-
---
 -- Table structure for table `auth_group`
 --
 
@@ -36,7 +28,7 @@ CREATE TABLE `auth_group` (
   `name` varchar(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +56,7 @@ CREATE TABLE `auth_group_permissions` (
   KEY `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id`),
   CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +83,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +116,15 @@ INSERT INTO `auth_permission` VALUES
 (21,'Can add session',6,'add_session'),
 (22,'Can change session',6,'change_session'),
 (23,'Can delete session',6,'delete_session'),
-(24,'Can view session',6,'view_session');
+(24,'Can view session',6,'view_session'),
+(25,'Can add usuario',7,'add_usuario'),
+(26,'Can change usuario',7,'change_usuario'),
+(27,'Can delete usuario',7,'delete_usuario'),
+(28,'Can view usuario',7,'view_usuario'),
+(29,'Can add tarefa',8,'add_tarefa'),
+(30,'Can change tarefa',8,'change_tarefa'),
+(31,'Can delete tarefa',8,'delete_tarefa'),
+(32,'Can view tarefa',8,'view_tarefa');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +149,7 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -177,7 +177,7 @@ CREATE TABLE `auth_user_groups` (
   KEY `auth_user_groups_group_id_97559544_fk_auth_group_id` (`group_id`),
   CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
   CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -205,7 +205,7 @@ CREATE TABLE `auth_user_user_permissions` (
   KEY `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` (`permission_id`),
   CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -238,7 +238,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,7 +263,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -278,7 +278,9 @@ INSERT INTO `django_content_type` VALUES
 (2,'auth','permission'),
 (4,'auth','user'),
 (5,'contenttypes','contenttype'),
-(6,'sessions','session');
+(6,'sessions','session'),
+(8,'website','tarefa'),
+(7,'website','usuario');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -295,7 +297,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -305,24 +307,26 @@ CREATE TABLE `django_migrations` (
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
 INSERT INTO `django_migrations` VALUES
-(1,'contenttypes','0001_initial','2024-11-08 16:03:20.302129'),
-(2,'auth','0001_initial','2024-11-08 16:03:20.650178'),
-(3,'admin','0001_initial','2024-11-08 16:03:20.746272'),
-(4,'admin','0002_logentry_remove_auto_add','2024-11-08 16:03:20.755983'),
-(5,'admin','0003_logentry_add_action_flag_choices','2024-11-08 16:03:20.770438'),
-(6,'contenttypes','0002_remove_content_type_name','2024-11-08 16:03:20.833464'),
-(7,'auth','0002_alter_permission_name_max_length','2024-11-08 16:03:20.901133'),
-(8,'auth','0003_alter_user_email_max_length','2024-11-08 16:03:20.936709'),
-(9,'auth','0004_alter_user_username_opts','2024-11-08 16:03:20.953177'),
-(10,'auth','0005_alter_user_last_login_null','2024-11-08 16:03:21.006005'),
-(11,'auth','0006_require_contenttypes_0002','2024-11-08 16:03:21.008094'),
-(12,'auth','0007_alter_validators_add_error_messages','2024-11-08 16:03:21.016660'),
-(13,'auth','0008_alter_user_username_max_length','2024-11-08 16:03:21.057366'),
-(14,'auth','0009_alter_user_last_name_max_length','2024-11-08 16:03:21.086839'),
-(15,'auth','0010_alter_group_name_max_length','2024-11-08 16:03:21.113874'),
-(16,'auth','0011_update_proxy_permissions','2024-11-08 16:03:21.131880'),
-(17,'auth','0012_alter_user_first_name_max_length','2024-11-08 16:03:21.160568'),
-(18,'sessions','0001_initial','2024-11-08 16:03:21.197195');
+(1,'contenttypes','0001_initial','2024-11-15 20:51:53.198656'),
+(2,'auth','0001_initial','2024-11-15 20:51:53.406698'),
+(3,'admin','0001_initial','2024-11-15 20:51:53.460718'),
+(4,'admin','0002_logentry_remove_auto_add','2024-11-15 20:51:53.468266'),
+(5,'admin','0003_logentry_add_action_flag_choices','2024-11-15 20:51:53.476796'),
+(6,'contenttypes','0002_remove_content_type_name','2024-11-15 20:51:53.518755'),
+(7,'auth','0002_alter_permission_name_max_length','2024-11-15 20:51:53.562292'),
+(8,'auth','0003_alter_user_email_max_length','2024-11-15 20:51:53.578537'),
+(9,'auth','0004_alter_user_username_opts','2024-11-15 20:51:53.586191'),
+(10,'auth','0005_alter_user_last_login_null','2024-11-15 20:51:53.610272'),
+(11,'auth','0006_require_contenttypes_0002','2024-11-15 20:51:53.611606'),
+(12,'auth','0007_alter_validators_add_error_messages','2024-11-15 20:51:53.618488'),
+(13,'auth','0008_alter_user_username_max_length','2024-11-15 20:51:53.634724'),
+(14,'auth','0009_alter_user_last_name_max_length','2024-11-15 20:51:53.649916'),
+(15,'auth','0010_alter_group_name_max_length','2024-11-15 20:51:53.667743'),
+(16,'auth','0011_update_proxy_permissions','2024-11-15 20:51:53.682296'),
+(17,'auth','0012_alter_user_first_name_max_length','2024-11-15 20:51:53.697954'),
+(18,'sessions','0001_initial','2024-11-15 20:51:53.717234'),
+(19,'website','0001_initial','2024-11-15 20:51:53.750662'),
+(20,'website','0002_alter_tarefa_tar_prioridade_alter_tarefa_tar_status','2024-11-15 20:51:53.755572');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -339,7 +343,7 @@ CREATE TABLE `django_session` (
   `expire_date` datetime(6) NOT NULL,
   PRIMARY KEY (`session_key`),
   KEY `django_session_expire_date_a5c62663` (`expire_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -352,57 +356,57 @@ LOCK TABLES `django_session` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_tarefas`
+-- Table structure for table `website_tarefa`
 --
 
-DROP TABLE IF EXISTS `tbl_tarefas`;
+DROP TABLE IF EXISTS `website_tarefa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_tarefas` (
-  `tar_codigo` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `website_tarefa` (
+  `tar_codigo` bigint(20) NOT NULL AUTO_INCREMENT,
   `tar_descricao` varchar(255) NOT NULL,
   `tar_setor` varchar(255) NOT NULL,
-  `tar_prioridade` varchar(255) NOT NULL,
-  `tar_status` varchar(255) NOT NULL,
-  `usu_codigo` int(11) NOT NULL,
+  `tar_prioridade` varchar(20) NOT NULL,
+  `tar_status` varchar(20) NOT NULL,
   `tar_data` date NOT NULL,
+  `usu_codigo_id` bigint(20) NOT NULL,
   PRIMARY KEY (`tar_codigo`),
-  KEY `fk_usu_codigo` (`usu_codigo`),
-  CONSTRAINT `fk_usu_codigo` FOREIGN KEY (`usu_codigo`) REFERENCES `tbl_usuario` (`usu_codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `website_tarefa_usu_codigo_id_417d0577_fk_website_u` (`usu_codigo_id`),
+  CONSTRAINT `website_tarefa_usu_codigo_id_417d0577_fk_website_u` FOREIGN KEY (`usu_codigo_id`) REFERENCES `website_usuario` (`usu_codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_tarefas`
+-- Dumping data for table `website_tarefa`
 --
 
-LOCK TABLES `tbl_tarefas` WRITE;
-/*!40000 ALTER TABLE `tbl_tarefas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_tarefas` ENABLE KEYS */;
+LOCK TABLES `website_tarefa` WRITE;
+/*!40000 ALTER TABLE `website_tarefa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `website_tarefa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_usuario`
+-- Table structure for table `website_usuario`
 --
 
-DROP TABLE IF EXISTS `tbl_usuario`;
+DROP TABLE IF EXISTS `website_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_usuario` (
-  `usu_codigo` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `website_usuario` (
+  `usu_codigo` bigint(20) NOT NULL AUTO_INCREMENT,
   `usu_nome` varchar(255) NOT NULL,
   `usu_email` varchar(255) NOT NULL,
   PRIMARY KEY (`usu_codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_usuario`
+-- Dumping data for table `website_usuario`
 --
 
-LOCK TABLES `tbl_usuario` WRITE;
-/*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
+LOCK TABLES `website_usuario` WRITE;
+/*!40000 ALTER TABLE `website_usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `website_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -414,4 +418,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2024-11-08 13:08:05
+-- Dump completed on 2024-11-15 17:55:58

@@ -1,5 +1,5 @@
 """
-WSGI config for tarefas project.
+WSGI config for projectdir project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tarefas.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'projectdir.settings')
 
 application = get_wsgi_application()
