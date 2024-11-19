@@ -1,0 +1,41 @@
+.container {
+   background-color: #1a16fa;
+   color: white;
+   display: flex;rem;
+   gap: 42%;
+
+   padding-left: 1rem;
+   padding-bottom: 3rem;
+
+    border-radius: 0.6
+
+}
+
+.container .logo {
+    padding-top: 2rem;
+    font-size: 1.3rem;
+
+
+}
+
+
+.container .links {
+     display: flex;
+     gap: 30px;
+     padding-top: 1rem;
+
+
+
+
+}
+
+.container .links a {
+    text-decoration: none;
+    color: white;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
