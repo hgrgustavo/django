@@ -1,25 +1,23 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title></title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div class="container">
-    <div class="logo">
-        Gerenciamento de tarefas
+    <div class="container">
+        <div class="logo">
+            Gerenciamento de Tarefas
+        </div>
+        <div class="links">
+            <a href="./cadastro_tarefas.html">cadastro de tarefas</a>
+            <a href="./cadastro_usuario.html">cadastro de usuarios</a>
+            <a href="./minhas_tarefas.html">minhas tarefas</a>
+        </div>
     </div>
-
-
-    <div class="links">
-        <a href="../cadastro_tarefas.html">cadastro de tarefas</a>
-        <a href="../cadastro_usuario.html">cadastro de usuarios</a>
-        <a href="../minhas_tarefas.html">minhas tarefas</a>
-
-    </div>
-</div>
+    <hr>
 </body>
 </html>
 

@@ -11,6 +11,7 @@ class CadastroUsuario(CreateView):
     success_url = "minhas_tarefas.html"
 
 
+
 class CadastroTarefas(CreateView):
     template_name = "cadastro_tarefas.html"
     model = Tarefa

@@ -1,19 +1,20 @@
 .container {
-   background-color: #1a16fa;
+   background-color: #4477b2;
    color: white;
-   display: flex;rem;
-   gap: 42%;
+   display: flex;
+   gap: 38%;
 
    padding-left: 1rem;
    padding-bottom: 3rem;
 
-    border-radius: 0.6
+   border-radius: 0.3rem;
 
 }
 
 .container .logo {
     padding-top: 2rem;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
+    padding-left: 1rem;
 
 
 }
@@ -38,4 +39,14 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 
+}
+
+hr {
+    background-color: black;
+    color: black;
+
+    padding-bottom: 0.2rem;
+
+    border-radius: 0.3rem;
+    border: none;
 }
