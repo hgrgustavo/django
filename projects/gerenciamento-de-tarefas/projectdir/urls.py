@@ -9,6 +9,7 @@ urlpatterns = [
 
     # login path
 
-    # index path
 
+    # empty path
+    path("", views.EmptyPathView.as_view())
 ]
