@@ -2,7 +2,7 @@
    background-color: #4477b2;
    color: white;
    display: flex;
-   gap: 38%;
+   gap: 35%;
 
    padding-left: 1rem;
    padding-bottom: 3rem;
@@ -24,6 +24,8 @@
      display: flex;
      gap: 30px;
      padding-top: 1rem;
+     padding-right: 1rem;
+
 
 
 
