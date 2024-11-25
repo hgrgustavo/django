@@ -1,3 +1,5 @@
+
+
 .container {
    background-color: #4477b2;
    color: white;
@@ -25,16 +27,11 @@
      gap: 30px;
      padding-top: 1rem;
      padding-right: 1rem;
-
-
-
-
-
 }
 
 .container .links a {
-    text-decoration: none;
     color: white;
+
 
 }
 
@@ -51,4 +48,9 @@ hr {
 
     border-radius: 0.3rem;
     border: none;
+}
+
+.form-div form .form-text-input {
+    padding-bottom: 0.3rem;
+
 }

@@ -1,18 +1,44 @@
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView, ListView
 
-from website.forms import CadastroTarefaForm
-from website.models import Tarefa
+from website.forms import CadastroTarefaForm, CadastroUsuarioForm
+from website.models import Tarefa, Usuario
 
 
 class CadastroTarefas(CreateView):
-    context_object_name = "tarefa_object_list"
     model = Tarefa
     template_name = "cadastro_tarefas.html"
     form_class = CadastroTarefaForm
 
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {"form": form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('success_url')  # Replace 'success_url' with your actual success URL
+        return render(request, self.template_name, {"form": form})
+
 
 class CadastroUsuarios(CreateView):
+    model = Usuario
     template_name = "cadastro_usuarios.html"
+    form_class = CadastroUsuarioForm
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {"form": form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('success_url')  # Replace 'success_url' with your actual success URL
+        return render(request, self.template_name, {"form": form})
 
 
 class MinhasTarefas(ListView):
