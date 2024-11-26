@@ -7,7 +7,7 @@ from website.models import Tarefa, Usuario
 
 class CadastroTarefas(CreateView):
     model = Tarefa
-    template_name = "cadastro_tarefas.html"
+    template_name = 'cadastro_tarefas.html'
     form_class = CadastroTarefaForm
 
     def get(self, request, *args, **kwargs):
