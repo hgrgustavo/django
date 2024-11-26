@@ -11,7 +11,7 @@ class Tarefa(models.Model):
     tar_codigo = models.BigAutoField(primary_key=True)
     tar_descricao = models.CharField(max_length=255)
     tar_setor = models.CharField(max_length=255)
-    tar_prioridade = models.CharField(max_length=20, choices=[("Alta", "Alta"), ("Média", "Média"), ("Baixa", "Baixa")])
+    tar_prioridade = models.CharField(max_length=20)
     tar_status = models.CharField(max_length=20, choices=[("Completa", "Completa"), ("Pendente", "Pendente")])
     tar_data = models.DateField()
 

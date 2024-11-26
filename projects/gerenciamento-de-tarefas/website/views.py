@@ -27,6 +27,7 @@ class CadastroUsuarios(CreateView):
     model = Usuario
     template_name = "cadastro_usuarios.html"
     form_class = CadastroUsuarioForm
+    sucess_url = "usuario/cadastro/"
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
@@ -37,12 +38,13 @@ class CadastroUsuarios(CreateView):
 
         if form.is_valid():
             form.save()
-            return redirect('success_url')  # Replace 'success_url' with your actual success URL
+            return redirect(self.sucess_url)  # Replace 'success_url' with your actual success URL
         return render(request, self.template_name, {"form": form})
 
 
 class MinhasTarefas(ListView):
     template_name = "minhas_tarefas.html"
+
 
 
 class EmptyPathView(TemplateView):

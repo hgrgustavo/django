@@ -3,9 +3,9 @@ from website import views
 
 
 urlpatterns = [
-    path('cadastro-usuario/', views.CadastroUsuarios.as_view(), name='cadastro_usuarios'),
-    path("painel/", views.MinhasTarefas.as_view(), name="minhas_tarefas"),
-    path("cadastro-tarefa/", views.CadastroTarefas.as_view(), name="cadastro_tarefas"),
+    path("usuarios/cadastro/", views.CadastroUsuarios.as_view(), name="cadastro_usuarios"),
+    path("tarefas/minhas-tarefas/", views.MinhasTarefas.as_view(), name="minhas_tarefas"),
+    path("tarefas/cadastro/", views.CadastroTarefas.as_view(), name="cadastro_tarefas"),
 
     # login path
 

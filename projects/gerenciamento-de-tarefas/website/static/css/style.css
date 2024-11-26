@@ -1,7 +1,7 @@
 
 
 .container {
-   background-color: #4477b2;
+   background: linear-gradient(111.5deg, rgb(20, 100, 196) 0.4%, rgb(33, 152, 214) 100.2%);
    color: white;
    display: flex;
    gap: 35%;
@@ -58,6 +58,36 @@ hr {
 .form-div input {
     padding: 0.5rem;
     padding-right: 15rem;
+    border: 0rem;
 
+
+}
+
+.form-div .form-select {
+    padding-bottom: 0.3rem;
+
+
+}
+
+.form-div select {
+    padding: 0.4rem;
+    padding-right: 22.36rem;
+    border-radius: 0rem;
+    border: 0rem;
+
+}
+
+.form-div .form-button {
+    padding-top: 2rem;
+}
+
+.form-div button {
+    padding: 0.6rem;
+    width: 6rem;
+    border: 0rem;
+    background: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
 
 }
