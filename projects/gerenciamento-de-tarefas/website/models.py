@@ -22,7 +22,3 @@ class Tarefa(models.Model):
     tar_status = models.CharField(max_length=20, choices=[("Completa", "Completa"), ("Pendente", "Pendente")])
     tar_data = models.DateField()
     usu_codigo = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-
-
-
-

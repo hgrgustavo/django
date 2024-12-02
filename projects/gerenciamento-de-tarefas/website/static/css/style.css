@@ -55,9 +55,9 @@ hr {
 
 }
 
-.form-div input {
+.form-div .form-text-input input {
     padding: 0.5rem;
-    padding-right: 1rem;
+    padding-right: 17rem;
     border: 0rem;
 
 
