@@ -8,6 +8,8 @@ class CadastroTarefaForm(ModelForm):
         super().__init__(*args, **kwargs)
         for key, field in self.fields.items():
             field.label = ""
+        self.fields["usu_codigo"].queryset = Usuario.objects.all()
+        self.fields["usu_codigo"].empty_label = "Usuário"
 
     class Meta:
         model = Tarefa
@@ -20,14 +22,11 @@ class CadastroTarefaForm(ModelForm):
         widgets = {
             "tar_descricao": TextInput(attrs={"placeholder": "Descrição", "required": "required"}),
             "tar_setor": TextInput(attrs={"placeholder": "Setor", "required": "required"}),
-            "usu_codigo": Select(choices=[
-                ("", "Usuário"),
-                (1, "Gus")
-                # query users name with the respective fk
-            ], attrs={
-                "required": "required",
-                "onchange": "this.options[0].hidden=false; this.options[0].disabled=true; this.options.selected=true;"
-            }),
+            "usu_codigo": Select(
+                attrs={
+                    "required": "required",
+                    "onchange": "this.options[0].hidden=true; this.options[0].disabled=true; this.options.selected=true;"
+                }),
 
             "tar_prioridade": Select(choices=[
                 ("", "Prioridade"),
@@ -36,7 +35,7 @@ class CadastroTarefaForm(ModelForm):
                 ("Baixa", "Baixa")
             ], attrs={
                 "required": "required",
-                "onchange": "this.options[0].hidden=false; this.options[0].disabled=true; this.options.selected=true;"
+                "onchange": "this.options[0].hidden=true; this.options[0].disabled=true; this.options.selected=true;"
             })
         }
 
