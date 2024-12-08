@@ -4,49 +4,57 @@
 <h1>Tarefas</h1>
 <div class="master">
     <div class="status-completa">
-        <h2>completa</h2>
+        <h2>completas</h2>
         {% for t in tarefas %}
         {% if t.tar_status == "Completa" %}
         <div class="content-box">
-            <b>Descrição:</b> <i>{{ t.tar_descricao }}</i>
-            <br>
-            <b>Setor:</b> <i>{{ t.tar_setor }}</i>
-            <br>
-            <b>Prioridade:</b> <i>{{ t.tar_prioridade }}</i>
-            <br>
-            <b>Vinculado a:</b> <i>{{ t.usu_codigo }}</i>
+            <div class="content-box-info">
+                <b>Descrição:</b> <i>{{ t.tar_descricao }}</i>
+                <br>
+                <b>Setor:</b> <i>{{ t.tar_setor }}</i>
+                <br>
+                <b>Prioridade:</b> <i>{{ t.tar_prioridade }}</i>
+                <br>
+                <b>Vinculado a:</b> <i>{{ t.usu_codigo }}</i>
+            </div>
             <div class="content-box-buttons">
                 {% with writing_img="img/writing.png" delete_img="img/delete.png"%}
-                <button type="submit"><img src="{% static writing_img %}"></button>
-                <button type="submit"><img src="{% static delete_img %}"></button>
+                <button class="edit-button"><img class="button-image" src="{% static writing_img %}"></button>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <button class="delete-button"><img class="button-image" src="{% static delete_img %}"></button>
+
+                </form>
                 {% endwith %}
             </div>
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
-
+    {% endif %}
+    {% endfor %}
     <div class="status-pendente">
-        <h2>pendente</h2>
+        <h2>pendentes</h2>
         {% for t in tarefas %}
         {% if t.tar_status == "Pendente" %}
         <div class="content-box">
-            <b>Descrição:</b> <i>{{ t.tar_descricao }}</i>
-            <br>
-            <b>Setor:</b> <i>{{ t.tar_setor }}</i>
-            <br>
-            <b>Prioridade:</b> <i>{{ t.tar_prioridade }}</i>
-            <br>
-            <b>Vinculado a:</b> <i>{{ t.usu_codigo }}</i>
+            <div class="content-box-info">
+                <b>Descrição:</b> <i>{{ t.tar_descricao }}</i>
+                <br>
+                <b>Setor:</b> <i>{{ t.tar_setor }}</i>
+                <br>
+                <b>Prioridade:</b> <i>{{ t.tar_prioridade }}</i>
+                <br>
+                <b>Vinculado a:</b> <i>{{ t.usu_codigo }}</i>
+            </div>
             <div class="content-box-buttons">
                 {% with writing_img="img/writing.png" delete_img="img/delete.png"%}
-                <button type="submit" formmethod="post"><img src="{% static writing_img %}"></button>
-                <button type="submit" formmethod="post"><img src="{% static delete_img %}"></button>
+                <button class="edit-button"><img class="button-image" src="{% static writing_img %}"></button>
+                <button class="delete-button"><img class="button-image" src="{% static delete_img %}"></button>
                 {% endwith %}
             </div>
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
+    {% endif %}
+    {% endfor %}
 </div>
 {% endblock %}

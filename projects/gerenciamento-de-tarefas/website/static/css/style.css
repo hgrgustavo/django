@@ -2,27 +2,16 @@ h1 {
     text-align: center;
 }
 
-img {
-    border: 0;
-    background: whitesmoke;
-    width: 1.2rem;
-    height: 1.2rem;
-
-
-
-
-
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
-    background: whitesmoke;
-    border: 0;
-    padding: 0.1rem;
-    display: flex;
-
-
-
-
+hr {
+    background-color: black;
+    color: black;
+    padding-bottom: 0.2rem;
+    border-radius: 0.3rem;
+    border: none;
 }
 
 .container {
@@ -53,18 +42,7 @@ button {
     color: white;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
 
-}
-
-hr {
-    background-color: black;
-    color: black;
-    padding-bottom: 0.2rem;
-    border-radius: 0.3rem;
-    border: none;
-}
 
 .form-div form .form-text-input {
     padding-bottom: 0.3rem;
@@ -111,25 +89,61 @@ hr {
 
 .content-box {
     background-color: whitesmoke;
-    border: 0.1rem solid;
+    border: 0.1rem transparent;
     border-radius: 0.3rem;
-    padding-right: 60rem;
+    padding-right: 0rem;
     padding-left: 0.65rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    font-size: 0.6rem;
+    padding-right: 0rem;
+    font-size: 0.8rem;
+    display: flex;
+}
+
+
+.content-box-info {
+    padding: 0;
+    border: 0;
+}
+
+.content-box-info b {
+    font-size: 0.7rem;
 }
 
 .content-box-buttons {
-    display: flex;
-    gap: 10%;
-    margin: auto;
+    padding-left: 5rem;
+    padding-right: 1rem;
+    align-self: center;
+}
 
+.edit-button {
+    border-radius: 0.2rem;
+    border-color: transparent;
+    cursor: pointer;
+    background: transparent;
+}
 
-
-
-
+.edit-button:hover {
+    background-color: #cddced;
 
 }
+
+.delete-button {
+    border-radius: 0.2rem;
+    border-color: transparent;
+    cursor: pointer;
+    background: transparent;
+}
+
+.delete-button:hover {
+    background-color: #f0b4b7;
+}
+
+.button-image {
+    width: 18px;
+    height: 18px;
+}
+
+
 
 
