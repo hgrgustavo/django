@@ -1,1 +1,42 @@
 {% extends "base.html" %}
+{% block content %}
+<h1>Tarefas</h1>
+<div class="master">
+
+    <div class="status-completa">
+        <h2>completa</h2>
+        {% for t in tarefas %}
+            {% if t.tar_status == "Completa" %}
+            <div class="content-box">
+                <b>Descrição:</b> <i>{{ t.tar_descricao }}</i>
+                <br>
+                <b>Setor:</b> <i>{{ t.tar_setor }}</i>
+                <br>
+                <b>Prioridade:</b> <i>{{ t.tar_prioridade }}</i>
+                <br>
+                <b>Vinculado a:</b> <i>{{ t.usu_codigo }}</i>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="status-pendente">
+        <h2>pendente</h2>
+        {% for t in tarefas %}
+            {% if t.tar_status == "Pendente" %}
+           <div class="content-box">
+                <b>Descrição:</b> <i>{{ t.tar_descricao }}</i>
+                <br>
+                <b>Setor:</b> <i>{{ t.tar_setor }}</i>
+                <br>
+                <b>Prioridade:</b> <i>{{ t.tar_prioridade }}</i>
+                <br>
+                <b>Vinculado a:</b> <i>{{ t.usu_codigo }}</i>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+</div>
+{% endblock %}

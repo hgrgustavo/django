@@ -7,7 +7,6 @@ class Usuario(models.Model):
     usu_codigo = models.BigAutoField(primary_key=True)
     usu_nome = models.CharField(max_length=255)
     usu_email = models.EmailField(max_length=255)
-
     objects: Type[models.Manager] = models.Manager()
 
     def __str__(self):
@@ -21,4 +20,6 @@ class Tarefa(models.Model):
     tar_prioridade = models.CharField(max_length=20)
     tar_status = models.CharField(max_length=20, choices=[("Completa", "Completa"), ("Pendente", "Pendente")])
     tar_data = models.DateField()
+    objects: Type[models.Manager] = models.Manager()
+
     usu_codigo = models.ForeignKey(Usuario, on_delete=models.CASCADE)

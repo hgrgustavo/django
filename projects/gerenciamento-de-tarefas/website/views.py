@@ -44,7 +44,9 @@ class CadastroUsuarios(CreateView):
 
 class MinhasTarefas(ListView):
     template_name = "minhas_tarefas.html"
-
+    paginate_by = 3
+    model = Tarefa
+    context_object_name = "tarefas"
 
 
 class EmptyPathView(TemplateView):

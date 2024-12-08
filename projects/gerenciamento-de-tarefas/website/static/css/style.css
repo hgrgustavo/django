@@ -1,24 +1,21 @@
-
+h1 {
+    text-align: center;
+}
 
 .container {
    background: linear-gradient(111.5deg, rgb(20, 100, 196) 0.4%, rgb(33, 152, 214) 100.2%);
    color: white;
    display: flex;
    gap: 35%;
-
    padding-left: 1rem;
    padding-bottom: 3rem;
-
    border-radius: 0.3rem;
-
 }
 
 .container .logo {
     padding-top: 2rem;
     font-size: 1.7rem;
     padding-left: 1rem;
-
-
 }
 
 
@@ -31,8 +28,6 @@
 
 .container .links a {
     color: white;
-
-
 }
 
 body {
@@ -43,30 +38,23 @@ body {
 hr {
     background-color: black;
     color: black;
-
     padding-bottom: 0.2rem;
-
     border-radius: 0.3rem;
     border: none;
 }
 
 .form-div form .form-text-input {
     padding-bottom: 0.3rem;
-
 }
 
 .form-div .form-text-input input {
     padding: 0.5rem;
     padding-right: 17rem;
     border: 0rem;
-
-
 }
 
 .form-div .form-select {
     padding-bottom: 0.3rem;
-
-
 }
 
 .form-div select {
@@ -74,7 +62,6 @@ hr {
     padding-right: 22.36rem;
     border-radius: 0rem;
     border: 0rem;
-
 }
 
 .form-div .form-button {
@@ -89,5 +76,23 @@ hr {
     color: white;
     font-weight: bold;
     border-radius: 0.3rem;
+}
 
+.master {
+    display: inline-grid;
+    gap: 25%;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+
+.content-box {
+    background-color: whitesmoke;
+    border: 0.1rem solid;
+    border-radius: 0.3rem;
+    padding-right: 60rem;
+    padding-left: 0.65rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.6rem;
 }

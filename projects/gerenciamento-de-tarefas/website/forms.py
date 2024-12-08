@@ -8,8 +8,9 @@ class CadastroTarefaForm(ModelForm):
         super().__init__(*args, **kwargs)
         for key, field in self.fields.items():
             field.label = ""
-        self.fields["usu_codigo"].queryset = Usuario.objects.all()
+
         self.fields["usu_codigo"].empty_label = "Usuário"
+
 
     class Meta:
         model = Tarefa

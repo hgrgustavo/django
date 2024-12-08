@@ -7,6 +7,7 @@ urlpatterns = [
     path("tarefas/minhas-tarefas/", views.MinhasTarefas.as_view(), name="minhas_tarefas"),
     path("tarefas/cadastro/", views.CadastroTarefas.as_view(), name="cadastro_tarefas"),
 
+
     # login path
 
 
