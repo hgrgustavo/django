@@ -2,6 +2,29 @@ h1 {
     text-align: center;
 }
 
+img {
+    border: 0;
+    background: whitesmoke;
+    width: 1.2rem;
+    height: 1.2rem;
+
+
+
+
+
+}
+
+button {
+    background: whitesmoke;
+    border: 0;
+    padding: 0.1rem;
+    display: flex;
+
+
+
+
+}
+
 .container {
    background: linear-gradient(111.5deg, rgb(20, 100, 196) 0.4%, rgb(33, 152, 214) 100.2%);
    color: white;
@@ -96,3 +119,17 @@ hr {
     padding-bottom: 0.5rem;
     font-size: 0.6rem;
 }
+
+.content-box-buttons {
+    display: flex;
+    gap: 10%;
+    margin: auto;
+
+
+
+
+
+
+}
+
+
