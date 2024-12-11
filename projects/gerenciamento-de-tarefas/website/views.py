@@ -31,4 +31,4 @@ class EmptyPathView(TemplateView):
 
 class ExcluirTarefa(DeleteView):
     model = Tarefa
-    success_url = reverse_lazy("website:minhas_tarefas")
+    success_url = reverse_lazy("tarefas/minhas-tarefas/")
